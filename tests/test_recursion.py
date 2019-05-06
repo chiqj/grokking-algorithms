@@ -2,7 +2,7 @@
 
 import pytest
 
-from algorithms.recursion import Factorial, Fibonacci
+from algorithms.recursion import Factorial, Fibonacci, EuclideanAlgorithm
 
 
 def test_factorial():
@@ -22,3 +22,11 @@ def test_fibonacci():
     assert obj.run(10) == 55
     with pytest.raises(ValueError):
         obj.run(-1)
+
+
+def test_euclidean_algorithm():
+    obj = EuclideanAlgorithm()
+    assert obj.gcd(5, 5) == 5
+    assert obj.gcd(2, 10) == 2
+    assert obj.gcd(3, 7) == 1
+    assert obj.gcd(50, 20) == 10
