@@ -10,8 +10,8 @@ def test_find_min_element():
     assert obj.find_min_element(array) == 2
 
 
-def test_selection_sort():
+def test_selection_sort(arrays):
     obj = SelectionSort()
-    array = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
-    sorted_array = sorted(array)
-    assert obj.sort(array) == sorted_array
+    for array in arrays:
+        sorted_array = sorted(array)
+        assert obj.sort(array) == sorted_array

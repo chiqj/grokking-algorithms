@@ -1,37 +1,17 @@
 # coding=utf-8
 
-import pytest
-
 from algorithms.quick_sort import QuickSort, QuickSortInPlace
 
 
-@pytest.mark.parametrize(
-    'array',
-    (
-        [3, 1, 4, 1, 5, 9, 2, 5, 4],
-        [],
-        [10],
-        [3, 1],
-        [1, 2, 2, 3],
-    )
-)
-def test_quick_sort(array):
+def test_quick_sort(arrays):
     obj = QuickSort()
-    sorted_array = sorted(array)
-    assert obj.sort(array) == sorted_array
+    for array in arrays:
+        sorted_array = sorted(array)
+        assert obj.sort(array) == sorted_array
 
 
-@pytest.mark.parametrize(
-    'array',
-    (
-        [3, 1, 4, 1, 5, 9, 2, 5, 4],
-        [],
-        [10],
-        [3, 1],
-        [1, 2, 2, 3]
-    )
-)
-def test_quick_sort_in_place(array):
+def test_quick_sort_in_place(arrays):
     obj = QuickSortInPlace()
-    obj.sort(array)
-    assert array == sorted(array)
+    for array in arrays:
+        obj.sort(array)
+        assert array == sorted(array)
