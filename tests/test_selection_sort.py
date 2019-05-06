@@ -4,10 +4,10 @@
 from algorithms.selection_sort import SelectionSort
 
 
-def test_find_min_element():
+def test_find_minimum_idx():
     obj = SelectionSort()
     array = [2, 3, 1, 4, 5]
-    assert obj.find_min_element(array) == 2
+    assert obj.find_minimum_idx(array) == 2
 
 
 def test_selection_sort(arrays):
