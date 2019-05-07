@@ -15,3 +15,17 @@ def arrays():
         [1, 2, 3, 4],
         [5, 5, 5, 5, 5],
     )
+
+
+@pytest.fixture
+def graph():
+    graph = {}
+    graph['A'] = ['B', 'C', 'E']
+    graph['B'] = ['D']
+    graph['C'] = ['D']
+    graph['D'] = []
+    graph['E'] = ['F', 'G']
+    graph['F'] = []
+    graph['G'] = []
+    graph['H'] = ['B']
+    return graph
