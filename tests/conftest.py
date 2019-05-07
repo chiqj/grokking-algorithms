@@ -18,14 +18,15 @@ def arrays():
 
 
 @pytest.fixture
-def graph():
-    graph = {}
-    graph['A'] = ['B', 'C', 'E']
-    graph['B'] = ['D']
-    graph['C'] = ['D']
-    graph['D'] = []
-    graph['E'] = ['F', 'G']
-    graph['F'] = []
-    graph['G'] = []
-    graph['H'] = ['B']
+def directed_graph():
+    graph = {
+        'A': ['B', 'C', 'E'],
+        'B': ['D'],
+        'C': ['D'],
+        'D': [],
+        'E': ['F', 'G'],
+        'F': [],
+        'G': [],
+        'H': ['B'],
+    }
     return graph
