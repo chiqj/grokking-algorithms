@@ -3,6 +3,7 @@
 
 class DijkstraAlgorithm:
     def find_min_cost_vertice(self, costs: dict, processed: set):
+        """ Find the minimum cost and not processed vertice in costs."""
         not_processed_vertice_costs = {
             vertice: cost for vertice, cost in costs.items()
             if vertice not in processed
@@ -14,6 +15,7 @@ class DijkstraAlgorithm:
         )
 
     def get_path(self, parents: dict, start_vertice, end_vertice):
+        """ Calculate path from start vertice to end vertice by parents. """
         result = [end_vertice]
         while result[0] != start_vertice:
             prev_vertice = parents.get(result[0])
@@ -48,6 +50,6 @@ class DijkstraAlgorithm:
             vertice = self.find_min_cost_vertice(costs, processed)
 
         return (
-            costs[end_vertice],
-            self.get_path(parents, start_vertice, end_vertice),
+            costs[end_vertice],                                     # costs
+            self.get_path(parents, start_vertice, end_vertice),     # path
         )
